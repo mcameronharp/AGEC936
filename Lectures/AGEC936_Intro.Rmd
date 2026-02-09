@@ -1,12 +1,12 @@
 ---
-title: "AGEC 936 - Module 1"
-author: "Jisang Yu <br> Kansas State University"
+title: "AGEC 936 - Module 4"
+author: "Micah Cameron-Harp <br> Kansas State University"
 subtitle: Introduction of Causal Inference
 output:
   slidy_presentation:
     font_adjustment: -1
     toc: no
-    footer: "AGEC 936 - Jisang Yu"
+    footer: "AGEC 936 - Micah Cameron-Harp"
   beamer_presentation: default
 bibliography: references.bib
 ---
@@ -35,10 +35,12 @@ library(Statamarkdown)
     -   Angrist, J.D. and Pischke, J.S., 2009. Mostly harmless
         econometrics: An empiricist's companion. Princeton university
         press.
+    -   Gertler, P.J. et al., 2016. Impact evaluation in practice. World Bank
+        Publications. [link](https://www.worldbank.org/en/programs/sief-trust-fund/publication/impact-evaluation-in-practice)
 
 # Introduction: Assignments
 
--   Problem set 1: Due 02/28/2025
+-   Problem set 1: Due 03/02/2026
 
 # Introduction: What we will cover
 
@@ -50,14 +52,12 @@ library(Statamarkdown)
 
 4.  Synthetic control
 
-5.  Panel IV/GMM/Shift-share design (if time permits)
-
 *Any other causal inference-related topics you are interested in? (Let me know by coming Friday)*
 
 # Introduction: My goals here are...
 
 -   To bring various (and mostly recent) empirical issues related to
-    causal inference to your attention
+    causal inference in panel data settings to your attention
 
 -   To help you become a critical consumer and a careful producer of
     empirical studies
@@ -71,6 +71,10 @@ than answers after this module...*
 
 # A quick note: Model versus Estimator
 
+- Estimand: The definition of the parameter of interest, or treatment effect, you intend to measure.
+
+  + Examples: Average treatment effect (ATE), Average treatment effect on the treated (ATT), Local average treatment effect (LATE), ...
+  
 - (Econometric) Model: A specification on the relationships among the variables of interest. It can be characterized by a set of parameters and variables.
   
   + Examples: Linear, Logit, Probit, Gravity, ...
@@ -79,9 +83,9 @@ than answers after this module...*
 
   + Examples: OLS, MLE, GMM, ...
   
-Phrases like *MLE model* does not make much sense. 
+  Note: Phrases like *OLS model* do not make sense. 
 
-Also, try to be explicit on the model and the estimator you use in your manuscript (instead of just stating *I use (a certain R/Stata package)*...)
+Be explicit on your target estimand, the model and the estimator you use in your writing (instead of writing *I use a certain R/Stata package*...)
   
 
 # Causal inference: Introduction

@@ -5,10 +5,10 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <meta name="author" content="Jisang Yu   Kansas State University" />
-  <meta name="copyright" content="AGEC 936 - Jisang Yu" />
+  <meta name="author" content="Micah Cameron-Harp   Kansas State University" />
+  <meta name="copyright" content="AGEC 936 - Micah Cameron-Harp" />
   <meta name="font-size-adjustment" content="-1" />
-  <title>AGEC 936 - Module 1</title>
+  <title>AGEC 936 - Module 4</title>
   <style type="text/css">
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -16,6 +16,7 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -81,6 +82,7 @@ code span.vs { color: #4070a0; }
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
 </style>
   <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -523,10 +525,10 @@ list-style-type: none;
 </head>
 <body>
 <div class="slide titlepage">
-  <h1 class="title">AGEC 936 - Module 1</h1>
+  <h1 class="title">AGEC 936 - Module 4</h1>
   <h1 class="subtitle">Introduction of Causal Inference</h1>
   <p class="author">
-Jisang Yu <br> Kansas State University
+Micah Cameron-Harp <br> Kansas State University
   </p>
 </div>
 <div id="introduction-key-materials" class="slide section level1">
@@ -545,13 +547,15 @@ and Applications.<br />
 </li>
 <li>Angrist, J.D. and Pischke, J.S., 2009. Mostly harmless econometrics:
 An empiricist’s companion. Princeton university press.</li>
+<li>Gertler, P.J. et al., 2016. Impact evaluation in practice. World
+Bank Publications. <a href="https://www.worldbank.org/en/programs/sief-trust-fund/publication/impact-evaluation-in-practice">link</a></li>
 </ul></li>
 </ul>
 </div>
 <div id="introduction-assignments" class="slide section level1">
 <h1>Introduction: Assignments</h1>
 <ul>
-<li>Problem set 1: Due 02/28/2025</li>
+<li>Problem set 1: Due 03/02/2026</li>
 </ul>
 </div>
 <div id="introduction-what-we-will-cover" class="slide section level1">
@@ -561,7 +565,6 @@ An empiricist’s companion. Princeton university press.</li>
 <li><p>Panel data analysis</p></li>
 <li><p>Fixed effects and Difference-in-Differences</p></li>
 <li><p>Synthetic control</p></li>
-<li><p>Panel IV/GMM/Shift-share design (if time permits)</p></li>
 </ol>
 <p><em>Any other causal inference-related topics you are interested in?
 (Let me know by coming Friday)</em></p>
@@ -570,7 +573,7 @@ An empiricist’s companion. Princeton university press.</li>
 <h1>Introduction: My goals here are…</h1>
 <ul>
 <li><p>To bring various (and mostly recent) empirical issues related to
-causal inference to your attention</p></li>
+causal inference in panel data settings to your attention</p></li>
 <li><p>To help you become a critical consumer and a careful producer of
 empirical studies</p></li>
 <li><p>Not necessarily “teach” you new methods – I will provide various
@@ -583,6 +586,12 @@ questions than answers after this module…</em></p>
 <div id="a-quick-note-model-versus-estimator" class="slide section level1">
 <h1>A quick note: Model versus Estimator</h1>
 <ul>
+<li><p>Estimand: The definition of the parameter of interest, or
+treatment effect, you intend to measure.</p>
+<ul>
+<li>Examples: Average treatment effect (ATE), Average treatment effect
+on the treated (ATT), Local average treatment effect (LATE), …</li>
+</ul></li>
 <li><p>(Econometric) Model: A specification on the relationships among
 the variables of interest. It can be characterized by a set of
 parameters and variables.</p>
@@ -593,12 +602,12 @@ parameters and variables.</p>
 <em>estimates</em> (for corresponding parameters)</p>
 <ul>
 <li>Examples: OLS, MLE, GMM, …</li>
-</ul></li>
 </ul>
-<p>Phrases like <em>MLE model</em> does not make much sense.</p>
-<p>Also, try to be explicit on the model and the estimator you use in
-your manuscript (instead of just stating <em>I use (a certain R/Stata
-package)</em>…)</p>
+<p>Note: Phrases like <em>OLS model</em> do not make sense.</p></li>
+</ul>
+<p>Be explicit on your target estimand, the model and the estimator you
+use in your writing (instead of writing <em>I use a certain R/Stata
+package</em>…)</p>
 </div>
 <div id="causal-inference-introduction" class="slide section level1">
 <h1>Causal inference: Introduction</h1>
@@ -845,7 +854,7 @@ or regression estimates to estimate the treatment effects:</p>
 ------------------------------------------------------------------------------
 
 
---------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 -&gt; group = 0
 
       Source |       SS           df       MS      Number of obs   =        50
@@ -862,7 +871,7 @@ or regression estimates to estimate the treatment effects:</p>
        _cons |   .4996683    .003033   164.74   0.000       .49357    .5057665
 ------------------------------------------------------------------------------
 
---------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 -&gt; group = 1
 
       Source |       SS           df       MS      Number of obs   =        50
@@ -949,7 +958,7 @@ or regression estimates to estimate the treatment effects:</p>
 ------------------------------------------------------------------------------
 
 
---------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 -&gt; group = 0
 
       Source |       SS           df       MS      Number of obs   =        70
@@ -966,7 +975,7 @@ or regression estimates to estimate the treatment effects:</p>
        _cons |   .4960149   .0017664   280.81   0.000     .4924901    .4995397
 ------------------------------------------------------------------------------
 
---------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 -&gt; group = 1
 
       Source |       SS           df       MS      Number of obs   =        30
@@ -1098,8 +1107,8 @@ ATET         |
 ------------------------------------------------------------------------------
 
 
-Iteration 0:  EE criterion =  6.896e-20  
-Iteration 1:  EE criterion =  3.618e-32  
+Iteration 0:  EE criterion = 6.896e-20  
+Iteration 1:  EE criterion = 3.618e-32  
 
 Treatment-effects estimation                    Number of obs     =        100
 Estimator      : inverse-probability weights
@@ -1173,7 +1182,7 @@ Data</a></p>
 </div>
 <div id="references" class="slide section level1 unnumbered">
 <h1 class="unnumbered">References</h1>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-angrist1998" class="csl-entry">
 Angrist, Joshua D. 1998. <span>“Estimating the Labor Market Impact of
 Voluntary Military Service Using Social Security Data on Military

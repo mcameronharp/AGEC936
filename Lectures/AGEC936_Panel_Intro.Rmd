@@ -1,18 +1,91 @@
 ---
-title: "AGEC 936 - Module 1"
-author: "Jisang Yu <br> Kansas State University"
-subtitle: "Panel Data Analysis"
+title: "AGEC 936 - Module 4"
+author: "Micah Cameron-Harp <br> Kansas State University"
+subtitle: Introduction of Causal Inference - Adapted from Material by Jisang Yu
 output:
- slidy_presentation:
-   font_adjustment: -1
-   toc: false
-   footer: "AGEC 936 - Jisang Yu"
+  slidy_presentation:
+    font_adjustment: -1
+    toc: no
+    footer: "AGEC 936 - Micah Cameron-Harp"
+  beamer_presentation: default
 bibliography: references.bib
 ---
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(Statamarkdown)
 ```
+
+# Introduction: Key materials
+
+-   Slides
+
+-   Readings
+
+-   Useful references (no need to purchase, The Mixtape and The Effect
+    are freely available online)
+
+    -   Cunningham, S., 2021, Causal Inference: The Mixtape,
+        [link](https://mixtape.scunning.com/)
+    -   Hungington-Klein, N., 2022, The Effect: An Introduction to
+        Research Design and Causality,
+        [link](https://theeffectbook.net/)
+    -   Cameron, A.C. and Trivedi, P.K., 2005. Microeconometrics:
+        Methods and Applications.\
+    -   Angrist, J.D. and Pischke, J.S., 2009. Mostly harmless
+        econometrics: An empiricist's companion. Princeton university
+        press.
+    -   Gertler, P.J. et al., 2016. Impact evaluation in practice. World Bank
+        Publications. [link](https://www.worldbank.org/en/programs/sief-trust-fund/publication/impact-evaluation-in-practice)
+
+# Introduction: Assignments
+
+-   Problem set 1: Due 03/02/2026
+
+# Introduction: What we will cover
+
+1.  Understanding causal inference
+
+2.  Panel data analysis
+
+3.  Fixed effects and Difference-in-Differences
+
+4.  Synthetic control
+
+*Any other causal inference-related topics you are interested in? (Let me know by coming Friday)*
+
+# Introduction: My goals here are...
+
+-   To bring various (and mostly recent) empirical issues related to
+    causal inference in panel data settings to your attention
+
+-   To help you become a critical consumer and a careful producer of
+    empirical studies
+
+-   Not necessarily "teach" you new methods -- I will provide various
+    frameworks for carefully thinking about these empirical issues and
+    point you to the relevant literature.
+
+*These being said, you may will leave this module with more questions
+than answers after this module...*
+
+# A quick note: Model versus Estimator
+
+- Estimand: The definition of the parameter of interest, or treatment effect, you intend to measure.
+
+  + Examples: Average treatment effect (ATE), Average treatment effect on the treated (ATT), Local average treatment effect (LATE), ...
+  
+- (Econometric) Model: A specification on the relationships among the variables of interest. It can be characterized by a set of parameters and variables.
+  
+  + Examples: Linear, Logit, Probit, Gravity, ...
+
+- Estimator: A function that maps *sample* to a set of *estimates* (for corresponding parameters)
+
+  + Examples: OLS, MLE, GMM, ...
+  
+  Note: Phrases like *OLS model* do not make sense. 
+
+Be explicit on your target estimand, your model and the estimator you use in your writing (instead of writing *I use a certain R/Stata package*...)
 
 # Panel data: an introduction
 - Data structure

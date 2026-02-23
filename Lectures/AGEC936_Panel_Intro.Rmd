@@ -460,7 +460,7 @@ $$
 * Nonlinear models: Incidental problem with MLE
 
 
-# Next week
-[DID and TWFE](https://jisangyu-agecon.github.io/AGEC936/Lectures/AGEC936_DD_FE.html)
+# Wednesday
+[Intro to DID and TWFE]
 
 # References

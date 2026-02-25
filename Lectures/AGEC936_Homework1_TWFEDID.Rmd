@@ -1,0 +1,28 @@
+---
+title: "AGEC 936 - Homework 1"
+author: "Micah Cameron-Harp<br>Kansas State University"
+subtitle: "Addressing staggered treatment - Simulation exercise"
+output:
+  slidy_presentation:
+    font_adjustment: -1
+    toc: no
+    footer: "AGEC 936 - Micah Cameron-Harp"
+  beamer_presentation: default
+bibliography: references.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE)
+library(Statamarkdown)
+```
+
+# Homework 1
+
+There are two goals for this exercise:
+
+1.  Demonstrating that you understand when to be concerned about using TWFE for identifying causal effects in a panel setting. 
+2.  Articulating why using TWFE in a particular empirical setting may be problematic.
+
+First, identify an empirical paper in your area of expertise with potentially biased TWFE estimates. Remember, TWFE generates biased estimates if treatment timing varies between panel units (staggered treatment) or when treatment effects are heterogeneous among the treated group (some treated units experience a larger treatment effect than others). The authors may or may not explicitly state that they are using a difference-in-differences identification strategy. Your assignment is to explain the empirical context of your paper, define the author's estimand of interest, and then discuss if you believe the TWFE estimator will recover that estimand. 
+
+Submit your assignment as concise (2 pages or less) Word document or PDF file. Include a reference to the paper you are discussing at the top (with a link/DOI for the paper) and any relevant figures or tables to support your argument.  

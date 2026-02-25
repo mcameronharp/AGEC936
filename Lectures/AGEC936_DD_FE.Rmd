@@ -1,12 +1,12 @@
 ---
-title: "AGEC 936 - Module 1"
-author: "Jisang Yu<br>Kansas State University"
+title: "AGEC 936 - Module 4"
+author: "Micah Cameron-Harp<br>Kansas State University"
 subtitle: "Difference-in-Differences (DID)<br>Two-way Fixed Effects (TWFE)"
 output:
  slidy_presentation:
-   font_adjustment: -1
+   font_adjustment: +1
    toc: false
-   footer: "AGEC 936 - Jisang Yu"
+   footer: "AGEC 936 - Micah Cameron-Harp"
 bibliography: references.bib
 ---
 ```{r setup, include=FALSE}
